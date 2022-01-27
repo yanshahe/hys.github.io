@@ -8,3 +8,8 @@ function evalNumber() {
         alert(inputValue + " is an odd number.")
     }
 }
+
+function changeTitle(){
+    let selectedElement = document.getElementById("programCard");
+    selectedElement.innerText = "DIGS";
+}
