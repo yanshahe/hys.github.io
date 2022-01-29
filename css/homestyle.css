@@ -4,3 +4,8 @@ body{
 div{
     text-align: justify;
 }
+
+#map{
+    height: 400px;
+    width: 100%;
+}
