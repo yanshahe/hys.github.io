@@ -56,10 +56,10 @@ function mapLoad(){
   
   
   
-    //Click event
-    var popup = L.popup();
+//Click event
+var popup = L.popup();
   
-    function onMapClick(e) {
+function onMapClick(e) {
       popup
       .setLatLng(e.latlng)
       .setContent("You clicked the map at " + e.latlng.toString())
@@ -67,3 +67,18 @@ function mapLoad(){
     }
     map.on('click', onMapClick);
   }
+
+//Add elements to the html via js
+function addElements(){
+  var valueArray = ['first', 'second', 'third'];
+  for (i in valueArray){
+    var newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'row');
+    newDiv.setAttribute('id', 'div '+i);
+    document.getElementById('addElements').appendChild(newDiv);
+    newDiv.innerText = valueArray[i];
+  };
+}
+
+
+
