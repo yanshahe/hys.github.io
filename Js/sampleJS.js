@@ -1,3 +1,4 @@
+// evaluate Number
 function evalNumber() {
     var inputValue = Number(prompt("Enter any five-digit number without commas"))
     if (isNaN(inputValue)){
@@ -11,7 +12,12 @@ function evalNumber() {
 // change title
 function changeTitle(){
     let selectedElement = document.getElementById("programCard");
-    selectedElement.innerText = "DIGS";
+    selectedElement.innerText = "Button Bar!";
+}
+
+// alert message
+function alertMessage() {
+  alert("I am an alert box!");
 }
 
 //current minute
@@ -69,7 +75,7 @@ function onMapClick(e) {
   }
 
 //Add elements to the html via js
-function addElements(){
+/*function addElements(){
   var valueArray = ['first', 'second', 'third'];
   for (i in valueArray){
     var newDiv = document.createElement('div');
@@ -78,7 +84,15 @@ function addElements(){
     document.getElementById('addElements').appendChild(newDiv);
     newDiv.innerText = valueArray[i];
   };
+}*/
+
+// Sort Array
+function ParseArray() {
+  var inputArray = [], inputCat = ['fruit', 'animal', 'state', 'country'];
+  inputCat.forEach((item) => {
+    var newInput = prompt(`enter one ${item}`);
+    inputArray.push(newInput);
+  });
+  document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
+      I sorted them ${inputArray.sort().join(', ')}`;
 }
-
-
-

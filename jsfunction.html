@@ -45,29 +45,27 @@
     </div> 
     <!--navbarends-->
 
-    <!--Data&DisappearFunction for practice-->
-    <div class="container-md">
-        <h1 class="display-3">Pika Pika Chu</h1>
-        <div id="addElements"></div>
-        <img class="img-fluid" src="images/pika.gif">
-        <h3 class="d-none d-md-block">The snozing Pika might want to know the current minutes of the day!</h3>
-        
-        <div id="currentminutes" >
-          <h3></h3>
-        </div>
-        <button onclick="getminutes()">Tell Pika</button>
-        
-        
-        <h3 class="d-none d-md-block">Oops! The alarm clock is about to go off!!!</h3>
-        <img id= "disappear" class="img-fluid" src="images/alarmclock.gif" style="border:4px solid #1b6b6f; padding:15px;">
-        <button onclick="disappearDisplay()">Hide Clock</button>
-
-      <!--ButtonGroup for practice-->
-      
-        <h5 id="programCard" class="card-title">Digital Studies</h5>
-        <p class="card-text">Hello! I just use this paragraph for practice.</p>
+    
+    <!--ButtonGroup for practice-->
+    <div class="container-fluid mt-5">  
+        <h2 id="programCard" class="card-title">Guess where it is?</h3>
         <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate Number</button>
         <button type="button" class="btn btn-warning" onclick="changeTitle()">Change Title</button>
+        <button type="button" class="btn btn-primary" onclick="alertMessage()">Pop Up</button>
+        <button type="button" class="btn btn-warning" onclick="disappearDisplay()">Hide Clock</button>
+        <button type="button" class="btn btn-primary" onclick="getminutes()">Get Minutes</button>
+        <button type="button" class="btn btn-warning" onclick="ParseArray()">Sort Array</button>
+        
+    </div>
+    <div class="container mt-5" id="currentminutes" >
+      <h5>Current Minutes</h5>
+    </div>
+
+    <div class="container mt-5" id="outputArray" >
+    </div>
+
+    <div class="container mt-5">
+      <img id= "disappear" class="img-fluid" src="images/alarmclock.gif" style="border:4px solid #1b6b6f; padding:15px;">
     </div>
       
 

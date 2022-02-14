@@ -13,10 +13,23 @@ nav{
     height: 400px;
     width: 100%;
 }
-p{
-    letter-spacing: normal;
-}
 
+  p::first-letter {
+    color: #92A9BD;
+    float: left;
+    font-size: 2em;
+    font-family: Georgia;
+    line-height: 10px;
+    padding-top: 4px;
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+  
+  
+  
+  
+  
+  
 
 
 .cardBtn {
@@ -24,3 +37,8 @@ p{
     color: white;
   }
 
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+  
