@@ -17,7 +17,44 @@
   crossorigin="anonymous"></script>
 </head>
 
-<body onload="loadXML()">
+<body onload="loadXML()"></body>
+
+<!--navbar-->
+<div id="nav-placeholder">
+  <nav class="navbar navbar-expand-lg navbar-light container-fluid">
+     <a class="navbar-brand" href="index.html">DIGS</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+       <ul class="navbar-nav">
+         <li class="nav-item active">
+           <a class="nav-link" href="index.html">Home</a>
+         </li>
+         
+         <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Digital Chalkboard</a>
+             <div class="dropdown-menu">
+                 
+                 <a class="dropdown-item" href="map.html"">Map API</a>
+                 <a class="dropdown-item" href="wiki.html"">Wiki API</a>
+                 <a class="dropdown-item" href="ochre.html"">OCHRE API</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="jsfunction.html">JSFunction</a>
+             </div>
+         </li>
+
+         <li class="nav-item">
+             <a class="nav-link" href="contact.html">Contact</a>
+           </li>
+
+       </ul>
+     </div>
+  </nav>   
+ </div> 
+<!--navbarends-->
+
+<!--searcharea-->
     <div id="nav-placeholder"></div>
     <div class="container mt-3">
       <div id="title"></div>
@@ -43,10 +80,25 @@
       
   
     </div>
+    <!--searchareaends-->
 
 
   <!-- JQuery loads footer here -->
-  <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
+  <!--Footer-->
+  <footer id="footer" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"><div class="container">
+    <div class="row text-muted">
+      <div class="col-4">
+        Digital Studies 
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4 justify-content-end">
+        © Yansha He
+      </div>
+    </div>
+  </div>
+  </footer>
+
+  <!--Footerends-->
 
   <!-- Load custom JS files -->
   <script src="Js/ochreAPI.js"></script>

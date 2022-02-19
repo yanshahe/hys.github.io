@@ -87,12 +87,28 @@ function onMapClick(e) {
 }*/
 
 // Sort Array
+
 function ParseArray() {
-  var inputArray = [], inputCat = ['fruit', 'animal', 'state', 'country'];
-  inputCat.forEach((item) => {
-    var newInput = prompt(`enter one ${item}`);
-    inputArray.push(newInput);
-  });
-  document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
-      I sorted them ${inputArray.sort().join(', ')}`;
+  let outputArray = document.getElementById("outputArray");
+  var newFruit = prompt("enter a fruit"); //prompt asks for input
+  var newAnimal = prompt("enter an animal"); //prompt asks for input
+  var newState = prompt("enter a state"); //prompt asks for input
+  var newCountry = prompt("enter a country"); //prompt asks for input
+
+  var array = []
+  array.push(newFruit.toLowerCase()); //.push method adds a value to an array
+  array.push(newAnimal.toLowerCase()); //.push method adds a value to an array
+  array.push(newState.toLowerCase()); //.push method adds a value to an array
+  array.push(newCountry.toLowerCase()); //.push method adds a value to an array
+
+  var x = array.sort(); //.sort method sorts values in an array
+  // var y = x.length; //.length method accesses the length of an array
+  console.log(x); //log the the sorted array
+  console.log(array); //log the entire array
+  outputArray.innerText = "The four items you typed are: " +
+  newFruit + ", " +
+  newAnimal + ", " +
+  newState + ", " +
+  newCountry +
+  ". \n I lowered all the letters and sorted them alphabetically: " + x.join(', ');
 }
