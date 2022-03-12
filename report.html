@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="Js/project.js"></script>
+    <title>Report</title>
+    <link rel="stylesheet" href="css/project.css">
+  </head>
+  <body>
+    <!--navbar-->
+    <div id="nav-placeholder">
+     <nav class="navbar navbar-expand-lg navbar-light container-fluid">
+        <a class="navbar-brand" href="index.html">DIGS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Digital Chalkboard</a>
+                <div class="dropdown-menu">
+                    
+                    <a class="dropdown-item" href="map.html"">Map API</a>
+                    <a class="dropdown-item" href="wiki.html"">Wiki API</a>
+                    <a class="dropdown-item" href="ochre.html"">OCHRE API</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="jsfunction.html">JSFunction</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+
+          </ul>
+        </div>
+     </nav>   
+    </div> 
+    <!--navbarends-->
+    
+    <!--realboady-->
+    <!--preface-->
+
+    <div class="container reporttitle">
+        <h3>Insights on Mobile Strategy Games Industry</h3>
+        <h5>Yansha He</h5>
+    </div>
+
+    <div class="container catalog">
+        <ul>
+            <li>
+                <a class="cataloglink" href="#section1"> 1. Introduction</a>
+            </li>
+            <li> <a class="cataloglink" href="#section2"> 2. Data Analyisis and Visualizations</a>
+                <ul>
+                    <li>
+                        <a class="cataloglink" href="#section2_1"> 2.1 Data Cleaning</a>
+                    </li>
+                    <li>
+                        <a class="cataloglink" href="#section2_2"> 2.2 Glimpse of the Trend</a>
+                    </li>
+                    <li>
+                        <a class="cataloglink" href="#section2_3"> 2.3 Interactive Graphs</a>
+                    </li>
+                  </ul>
+            </li>
+            <li>
+                <a class="cataloglink" href="#section3"> 3. Conclusions</a>
+            </li>
+          </ul>            
+    </div>
+    <!--preface ends-->
+    <!--Section1-->
+    <div id="section1" class="container">
+        <h4>Introductions</h4>
+        <p>The dataset I used is “17k Mobile Strategy Games” from Tristan at Kaggle. It is an enriching dataset about 17007 strategy games on the Apple App Store collected in 2019. The 17007 observations and 18 variables contain both essential information about the game itself – such as the name, the developer, and the descriptions– and the data from the players side including the average ratings and the number of ratings. Since 17007 is such a sufficient quantity, I would like to use this dataset to gain insights about the trend of the mobile strategy game industry and explore its marketing messages. Therefore, I would divide my project into two parts: the data visualization of the basic information of the 17007 strategy games; and a deeper text analysis for the descriptions of top popular games.</p>
+    </div>
+
+    <!--Section2-->
+    <div id="section2" class="container">
+        <h4>Data Analyisis and Visualizations</h4>
+        <!--data cleaning: show codes-->
+        <div id="section2_1" class="container subsection">
+            <h5> 2.1 Data Cleaning</h5>
+            <p>The dataframe needs to be cleaned first. I used "mutate" to convert original variables to what I want!</p>
+            <div class="text-md-end buttondiv1">
+                <button type="button" class="button1" id="togglebutton1" onclick="toggle()">Hide Codes</button>
+            </div>
+            <div class="container codecard1" id="codescript1" style="display: block;">
+                <pre>
+
+        game <- game %>%
+            mutate(OriginalReleaseDate = dmy(Original.Release.Date)) %>%
+            mutate(CurrentVersionReleaseDate = dmy(Current.Version.Release.Date))
+        game <- game %>%
+            mutate(ReleaseYear = year(OriginalReleaseDate))
+        game <- game %>%
+            mutate(DurationDays = as.numeric(difftime(CurrentVersionReleaseDate, OriginalReleaseDate, units = "days" )))
+        game %>% mutate(Size = replace_na(Size, 0)) -> game
+
+        game <- game %>%
+            mutate(Size = round(Size / 1000000, 2)) %>%
+            mutate(SizeGroup = ifelse(Size <= 1000, "1 GB and under",
+                     ifelse(Size > 1000 & Size <= 2000, "1 GB to 2 GB",
+                     ifelse(Size > 2000 & Size <= 3000, "2 GB to 3 GB",
+                     ifelse(Size > 3000 & Size <= 4000, "3 GB to 4 GB","Over 4 GB"))))) 
+               </pre>
+            </div>
+        </div>
+        <!--datacleaning ends: show codes-->
+        <!--simple graphs-->
+        <div id="section2_2" class="container subsection">
+            <h5> 2.2 Glimpse of the Trend</h5>
+            <!--single and simple graph display-->
+            <div class="container graph">
+                <img src="images/graph1.png" class="img-fluid rounded float-md-start" alt="...">
+            </div>
+            <div class="container analysis">
+                <p>With such an amount of games released every year, how were their qualities? I then analyzed  average user rating and its change in the 12 years, which showed the most of the games were rated relatively high as 4.5 on the Apple Store and the rating was increasing healthily from 2008 to 2019, suggesting that the quality of the mobile strategy games were developing (if we ignore the development of the fake rating industry…) </p>
+            </div>
+            <!--multiple graph compare and dispaly-->
+            <div class="picrow">
+                <div class="piccolumn">
+                  <img src="images/pie1.png" alt="Snow" style="width:100%">
+                </div>
+                <div class="piccolumn">
+                  <img src="images/pie2.png" alt="Forest" style="width:100%">
+                </div>
+                <div class="piccolumn">
+                  <img src="images/pie3.png" alt="Mountains" style="width:100%">
+                </div>
+            </div>
+            <div class="container analysis">
+                <p>About 69% of the games were designed for the general public players aged over four years old and 84% of them were designed as free games. Also, the main target age group for both the paid games and free games were the general public players aged over four years old, but for paid games, the target audience composition was slightly older. </p>
+            </div>
+        </div>
+        <!--simple graphs ends-->
+        <!--interactive graph-->
+        <div id="section2_3" class="container subsection">
+            <h5> 2.3 Interactive Graphs</h5>
+
+        </div>
+        <!--interactive graphs ends-->
+            
+
+    </div>
+
+    <!--Section3-->
+    <div id="section3" class="container">
+        <h4>Conclusions</h4>
+        <p>As mentioned before, the project needs more data, especially the descriptions and reviews, to develop more convincing learnings that can be utilized in the industry. In general, the mobile strategy games industry is blooming and competitive. In a detailed perspective, it is seemingly an obvious gap between what the developers would like to introduce and how players would like to see the game – so far we have not seen a stable connection between the  descriptions and reviews. A two-way symmetric communication can be improved between developers and players if developing more research on the players’ demand and what they really want to gain information about the games on the Apple App Store. This does not mean that developers should not publish official announcements or marketing messages on the descriptions, but advising a more flexible way to utilize the descriptions section for more effective message delivery to the core players. After all, it is the strategic communication with the players of the game that will help extend the product life cycle. 
+        </p>
+    </div>
+
+
+
+
+
+    <!--realbodyends-->
+
+    <!--Footer-->
+    <footer id="footer" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"><div class="container">
+      <div class="row text-muted">
+        <div class="col-4">
+          Digital Studies 
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 justify-content-end">
+          © Yansha He
+        </div>
+      </div>
+    </div>
+    </footer>
+  
+    <!--Footerends-->
+
+    
+   
+     
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
