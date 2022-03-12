@@ -26,6 +26,10 @@ a:hover {
     background-color: transparent;
     text-decoration: underline;
 }
+.progressgroup{
+    margin-bottom: 40px;
+
+}
 
 .progress-text{
     padding-top: 30px;
@@ -68,7 +72,6 @@ a:hover {
     padding-bottom: 10px;
 }
 
-
 #section1{
     padding-bottom: 30px;
 }
@@ -101,10 +104,12 @@ a:hover {
     color: white;
   }
 
+
 .subsection {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 
 .graph {
     padding-top: 20px;
@@ -119,11 +124,30 @@ a:hover {
     flex: 33.33%;
     padding: 5px;
   }
+
+
 .analysis {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+/** Texts **/
+.pageindex{
+    margin-top: 20px;
+}
 
+
+.scripttitle{
+    margin-top: 20px;
+}
+
+.scriptbody{
+    border-style: solid;
+    border-color: black;
+    overflow-y: auto;
+    height: 450px;
+    padding: 20px;
+    margin-top: 20px;
+}
 
 footer {
     position: fixed;
