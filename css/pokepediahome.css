@@ -15,6 +15,9 @@ nav{
     color: white;
 }
 
+.webbrand{
+    margin-left: 20px;
+}
 .welcomecard{
     background-color: floralwhite;
     text-align: center;
@@ -26,5 +29,80 @@ nav{
     height: 300px;
     width: 730px;
 
+
+}
+.zooncard{
+    margin-top: 30px;
+    width: 35rem;
+
+}
+
+.card-img{
+    opacity: 0.5;
+}
+
+.cardtext{
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cardbtn{
+    transition-duration: 0.2s;
+    background-color: white;
+    border-radius: 12px;
+    color: #00AEAD;
+    border-color: #00AEAD;
+    border-width: medium;
+    width: 10rem;
+
+}
+
+  
+.cardbtn:hover {
+    background-color: #00AEAD; 
+    color: white;
+  }
+
+.btncenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+  }
+
+
+.gif-right{
+    height:100px;
+    width: 100px;
+}
+
+
+.gifcontainer-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+}
+
+
+
+.quotebox{
+    margin-top: 50px;
+    width: 28rem;
+}
+
+.lead{
+    font-family: Georgia;
+}
+.lead::first-letter{
+    float: left;
+    font-size: 2em;
+    font-family: Georgia;
+    line-height: 10px;
+    padding-top: 4px;
+    padding-right: 2px;
+    padding-left: 2px;
 
 }

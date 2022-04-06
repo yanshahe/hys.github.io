@@ -8,15 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="Js/sampleJS.js"></script>
-    <title>Pokepedia Green</title>
+    <title>Poképédia Green</title>
     <link rel="stylesheet" href="css/pokepediahome.css">
   </head>
   <body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#"> 
+      <a class="navbar-brand webbrand" href="#"> 
         <img src="images/icongreen.png" width="30" height="30" class="d-inline-block align-top" alt="">  
-      Pokepedia Green</a>
+        Poképédia Green</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,7 +26,7 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pokedex</a>
+            <a class="nav-link" href="#">Pokédex</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -41,24 +41,69 @@
     
     <!--realboady-->
     <!--welcome-->
-    <div class="container welcomecard">
+    <div class="container-md welcomecard">
       <img src="images/leafeon.png" width="60" height="60" align="right">
       <img src="images/leafeon2.png" width="60" height="60" align="left">
-      <h3>Welcome to Pokepedia Green!</h3>
+      <h3>Welcome to Poképédia Green!</h3>
       <p><em>the environmental version of Pokémon encyclopedia</em></p>
       <pre>
-        Since its launch in April, 2022, Pokepedia Green has strived to become 
-        the bridge between the environmental philosophy in the Pokemon world and 
-        the environmental issues in reality. We encourage every Pokemon fans to 
-        perform as the real Pokemon rangers to protect our lovely world.
+        Since its launch in April, 2022, Poképédia Green has strived to become 
+        the bridge between the environmental philosophy in the Pokémon world and 
+        the environmental issues in reality. We encourage every Pokémon fans to 
+        perform as the real Pokémon rangers to protect our lovely world.
 
         We now have one crowdsourcing environmental project with over 100 rangers
-        in Zooniverse and 22 Pokedex cards mapping the real world endangered animals. 
-        If you want to be a Pokemon ranger, just join us! We need more rangers to 
+        in Zooniverse and 22 Pokédex cards mapping the real world endangered animals. 
+        If you want to be a Pokémon ranger, just join us! We need more rangers to 
         contribute to the environmental project and the website building!
       </pre>
     </div>
     <!--welcomeends-->
+    <!--eventcards-->
+    <div class="container">
+      <div class="row">
+        <div class="col-6"><!--col1-->
+          <div class="card bg-dark text-white zooncard container-md">
+            <img class="card-img" src="images/zooniverse.jpg" alt="Card image">
+            <div class="card-img-overlay">
+              <h3 class="card-title"><em>Pokémon Rangers</em></h3>
+              <div class="container cardtext">
+                <p class="card-text">Pokémon Rangers is a crowdsourcing environmental project in Zooniverse. We need you to help explore the environmental philosophy in the Pokémon world!</p>  
+              </div>
+              <div class="container btncenter">         
+                <a href="#" class="container btn cardbtn">Join Us</a>
+              </div>      
+            </div>
+          </div>
+        </div><!--col1ends-->
+        <div class="col">
+          <div class="container quotebox">
+            <div class="row justify-content-center align-items-center h-100">
+              <div class="col">
+                <div class="card text-white" style="background-color: #1f959b; border-radius: 15px;">
+                  <div class="card-body p-5">
+                    <p class="lead">"Man has plenty to learn from nature and Pokémon." </p>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-0">Mr. Briney</p>
+                      <h6 class="mb-0"><span class="badge rounded-pill" style="background-color: rgba(0,0,0, 0.2);">999 likes</span></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col gifcontainer-right">
+            <img class="gif-right" src="images/grass1.gif">
+            <img class="gif-right" src="images/grass2.gif">
+            <img class="gif-right" src="images/grass3.gif">
+            <img class="gif-right" src="images/grass4.gif">
+            <img class="gif-right" src="images/grass5.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--eventcardsends-->
 
 
 
