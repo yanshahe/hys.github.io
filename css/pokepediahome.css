@@ -18,6 +18,10 @@ nav{
 .webbrand{
     margin-left: 20px;
 }
+
+
+
+/*body*/
 .welcomecard{
     background-color: floralwhite;
     text-align: center;
@@ -218,3 +222,19 @@ color:white;
     bottom: 0;
     background-color: #B2D2A4;
   }
+
+/*pokedex*/
+.pokedexcards{
+    text-align: center;
+}
+
+.pokedexcards img{
+    transition: 0.5s ease;
+    }
+    
+.pokedexcards img:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s ease;
+    }
