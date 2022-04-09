@@ -238,3 +238,61 @@ color:white;
     transform: scale(1.1);
     transition: 0.5s ease;
     }
+
+.row1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/*pokepages*/
+.pokeinfo{
+  margin-top: 30px;
+}
+
+.features{
+  background-color: #00AEAD;
+  color:white;
+  border-radius: 15px;
+  padding: 30px;
+ 
+}
+.speciesdex{
+  margin-top: 100px;
+}
+
+
+
+.geeks {
+  margin-top: 190px;
+  width: 400px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.geeks::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: green;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      left: 0;
+  }
+
+  50% {
+      left: 100%;
+  }
+
+  0% {
+      left: 0;
+  }
+}
